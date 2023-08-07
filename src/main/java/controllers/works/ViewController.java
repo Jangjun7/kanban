@@ -4,10 +4,10 @@ import controllers.Controller;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class SaveController implements Controller {
+public class ViewController implements Controller {
     @Override
     public void get(HttpServletRequest req, HttpServletResponse resp) {
-        System.out.println("SaveController!");
+
     }
 
     @Override

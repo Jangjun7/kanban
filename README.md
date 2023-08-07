@@ -24,5 +24,15 @@
         - 작업등록 - /works/add
         - 작업수정 - /works/등록번호
         - 작업삭제 - /works/delete/등록번호
-    - 모델 구성
-    - 뷰 구성
+
+## 3일차
+* 모델 구성
+* 뷰 구성
+  - 회원가입 양식 : /WEB-INF/view/member/join.jsp + _form.jsp(공통 양식)
+  - 정보 수정 양식 : /WEB-INF/view/member/info.jsp _ _form.jsp(공통 양식)
+  - 로그인 양식 : /WEB-INF/view/works/login.jsp
+  - 작업 목록 : /WEB-INF/works/list.jsp
+  - 작업 조회 : /WEB-INF/works/view.jsp
+  - 작업 등록 : /WEB-INF/works/add.jsp + _form.jsp(공통 양식)
+  - 작업 수정 : /WEB-INF/works/edit.jsp + _form.jsp(공통 양식)
+* 칸반 등록, 수정, 삭제, 조회
