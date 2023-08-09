@@ -7,6 +7,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class InfoController implements Controller {
     public void get(HttpServletRequest req, HttpServletResponse resp) {
+
+
         ViewUtils.load(req, resp, "member", "info");
     }
 

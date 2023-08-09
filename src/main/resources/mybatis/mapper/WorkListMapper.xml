@@ -26,9 +26,9 @@
                 subject=#{subject},
             </if>
             <if test="content != null">
-                status=#{content},
+                content=#{content},
             </if>
-            modDt=NOW()
+             modDt=NOW()
         WHERE workNo=#{workNo}
     </update>
 
@@ -46,7 +46,6 @@
             <if test="userNo >= 0">
                 userNo=#{userNo} AND
             </if>
-
             <if test="status != null">
                 status=#{status} AND
             </if>

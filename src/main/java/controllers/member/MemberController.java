@@ -11,9 +11,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * - 회원가입 - /member/join
- * - 로그인 - /member/login
- * - 정보수정 - /member/info
+ *  - 회원가입 - /member/join
+ *  - 로그인 - /member/login
+ *  - 정보수정 - /member/info
  */
 @WebServlet("/member/*")
 public class MemberController extends HttpServlet {
@@ -28,7 +28,8 @@ public class MemberController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         router.route(req, resp, "member");
-    }
+
+     }
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

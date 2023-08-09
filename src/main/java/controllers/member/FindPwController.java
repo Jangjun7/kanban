@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class FindPwController implements Controller {
     @Override
     public void get(HttpServletRequest req, HttpServletResponse resp) {
+
         ViewUtils.load(req, resp, "member", "find_pw");
     }
 
