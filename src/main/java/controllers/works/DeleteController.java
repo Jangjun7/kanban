@@ -14,4 +14,8 @@ public class DeleteController implements Controller {
     public void post(HttpServletRequest req, HttpServletResponse resp) {
 
     }
+
+    private long getWorkNo(HttpServletRequest req) {
+
+    }
 }
