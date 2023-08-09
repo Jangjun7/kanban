@@ -46,6 +46,7 @@
             <if test="userNo >= 0">
                 userNo=#{userNo} AND
             </if>
+
             <if test="status != null">
                 status=#{status} AND
             </if>

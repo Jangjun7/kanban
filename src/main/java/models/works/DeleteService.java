@@ -7,6 +7,7 @@ public class DeleteService {
         this.workDao = workDao;
     }
 
+
     public void delete(long workNo){
 
         boolean result = workDao.delete(workNo);
