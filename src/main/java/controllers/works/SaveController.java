@@ -1,6 +1,8 @@
 package controllers.works;
 
 import static commons.ScriptUtils.*;
+
+import commons.UrlUtils;
 import commons.ViewUtils;
 import controllers.Controller;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,7 +23,8 @@ public class SaveController implements Controller {
             Work work = null;
             if (mode.equals("edit")) { // 수정
                 InfoService infoService = WorkServiceManager.getInstance().infoService();
-                work = infoService.get(getWorkNo(req));
+                long workNo = UrlUtils.getPatternData(req, "edit/(\\d*)");
+                work = infoService.get(workNo);
                 if (work == null) {
                     throw new WorkNotFoundException();
                 }
@@ -53,24 +56,5 @@ public class SaveController implements Controller {
             alertError(resp, e);
             e.printStackTrace();
         }
-    }
-
-    /**
-     * 작업 번호 추출
-     *
-     * @param req
-     * @return
-     */
-    private long getWorkNo(HttpServletRequest req) {
-        String URI = req.getRequestURI();
-
-        String pattern = "edit/(\\d*)";
-        Pattern p = Pattern.compile(pattern);
-        Matcher matcher = p.matcher(URI);
-        if (matcher.find()) {
-            return Long.parseLong(matcher.group(1));
-        }
-
-        return 0L;
     }
 }

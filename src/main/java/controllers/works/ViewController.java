@@ -1,5 +1,6 @@
 package controllers.works;
 
+import commons.UrlUtils;
 import commons.ViewUtils;
 import controllers.Controller;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,7 +21,8 @@ public class ViewController implements Controller {
 
         try {
             InfoService infoService = WorkServiceManager.getInstance().infoService();
-            Work work = infoService.get(getWorkNo(req));
+            long workNo = UrlUtils.getPatternData(req,"works/(\\d*)");
+            Work work = infoService.get(workNo);
             if(work == null){
                 throw new WorkNotFoundException();
             }
@@ -37,16 +39,5 @@ public class ViewController implements Controller {
     @Override
     public void post(HttpServletRequest req, HttpServletResponse resp) {
 
-    }
-
-    private long getWorkNo(HttpServletRequest req){
-        String pattern = "works/(\\d*)";
-        Pattern p = Pattern.compile(pattern);
-        Matcher matcher = p.matcher(req.getRequestURI());
-        if(matcher.find()){
-            return Long.parseLong(matcher.group(1));
-        }
-
-        return 0L;
     }
 }

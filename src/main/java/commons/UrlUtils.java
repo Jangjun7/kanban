@@ -6,7 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UrlUtils {
-    public long getData(HttpServletRequest req, String pattern) {
+    public static long getPatternData(HttpServletRequest req, String pattern) {
         String URI = req.getRequestURI();
         Pattern p = Pattern.compile(pattern);
         Matcher matcher = p.matcher(URI);
