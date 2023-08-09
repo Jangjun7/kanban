@@ -53,7 +53,8 @@ public class WorkDao {
      */
     public Work get(long workNo){
 
-        Work params = new Work;
+        Work params = new Work();
+
         params.setWorkNo(workNo);
 
         SqlSession sqlSession = DBConnection.getSession();
