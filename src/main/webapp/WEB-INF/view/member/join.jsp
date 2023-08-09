@@ -4,11 +4,12 @@
 <c:url var="action" value="/member/join" />
 
 <layout:main title="회원가입">
+
 <form name="frmJoin" method="POST" action="${action}" autocomplete="off">
     <jsp:include page="_form.jsp" />
     <div>
         <input type="checkbox" name="agree" value="true" id="agree">
-        <lable for="agree">회원가입 약관에 동의합니다.</label>
+        <label for="agree">회원가입 약관에 동의합니다.</label>
     </div>
     <div class="btns">
         <button type="reset">다시입력</button>

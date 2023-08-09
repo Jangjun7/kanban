@@ -11,12 +11,13 @@ public interface URLRouter {
 
     default String getMode(String URL, String location) {
         String mode = null;
-        String pattern = location + "/([^/].*)";
+        String pattern = location + "/([^/]*)";
         Pattern p = Pattern.compile(pattern);
         Matcher matcher = p.matcher(URL);
-        if(matcher.find()) {
+        if (matcher.find()) {
             mode = matcher.group(1);
         }
+
         return mode;
     }
 }
