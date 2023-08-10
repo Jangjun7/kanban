@@ -17,7 +17,7 @@
     - 컨트롤러 구성 
       - 회원쪽 컨트롤러 
         - 회원가입 - /member/join
-        - 로그인 - /member/login
+        - 로그인 - /member/login + /(메인)
         - 정보수정 - /member/info
       - 작업관리 컨트롤러
         - 작업목록 - /works
@@ -71,3 +71,8 @@
 * 기본 스타일 처리
 * 회원가입 양식 구성하기
 * 회원가입 처리하기
+  - 모델 구성
+  - models/member/JoinService.java : 가입
+  - models/member/Users.java
+  - models/member/UserDao.java
+  - models/member/JoinValidator.java
