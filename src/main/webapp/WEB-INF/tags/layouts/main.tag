@@ -4,8 +4,10 @@
 <%@ attribute name="title" %>
 <c:url var="mainUrl" value="/" />
 <c:url var="loginUrl" value="/member/login" />
+<c:url var="logoutUrl" value="/member/logout" />
 <c:url var="joinUrl" value="/member/join" />
 <c:url var="workListUrl" value="/works" />
+
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <section id="site_top" class="layout_width">
@@ -15,19 +17,23 @@
                     메인페이지
                 </a>
             </div>
-            <div class='right'>
-                <a href="${loginUrl}">
-                    <i class="xi-log-in"></i>
-                    로그인
-                </a>
-                <a href="${joinUrl}">
-                    <i class="xi-user-plus"></i>
-                    회원가입
-                </a>
-                <a href="${workListUrl}">
-                    <i class="xi-list"></i>
-                    작업목록
-                </a>
+            <div class="right">
+                <c:if test="${sessionScope.users == null}">
+                    <a href="${loginUrl}">
+                        <i class="xi-log-in"></i> 로그인
+                    </a>
+                    <a href="${joinUrl}">
+                        <i class="xi-user-plus"></i> 회원가입
+                    </a>
+                </c:if>
+                <c:if test="${sessionScope.users != null}">
+                    <a href="${workListUrl}">
+                        <i class="xi-list"></i> 작업목록
+                    </a>
+                    <a href="${logoutUrl}">
+                        <i class="xi-log-out"></i> 로그아웃
+                    </a>
+                </c:if>
             </div>
         </section>
     </jsp:attribute>
