@@ -12,9 +12,9 @@
         <result column="modDt" property="modDt" />
     </resultMap>
 
-    <insert id="add" parameterType="controllers.member.UserForm" useGeneratedKeys="true" keyProperty="userNo" >
+    <insert id="add" parameterType="controllers.member.UserForm" useGeneratedKeys="true" keyProperty="userNo">
         INSERT INTO users (userId, userPw, userNm, email, mobile)
-            VALUES (#{userId}, #{userPw}, #{userNm}, #{email}, #{mobile})
+        VALUES (#{userId}, #{userPw}, #{userNm}, #{email}, #{mobile})
     </insert>
 
     <select id="info" parameterType="controllers.member.UserForm" resultMap="userMap">
@@ -24,5 +24,4 @@
     <select id="exists" parameterType="controllers.member.UserForm" resultType="int">
         SELECT COUNT(*) FROM users WHERE userId=#{userId}
     </select>
-
 </mapper>
