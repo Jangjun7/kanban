@@ -87,3 +87,5 @@
     - models/member/LoginValidator.java
 * 로그아웃 구현하기
 * 아이디 저장하기 구현하기
+
+## 8일차
