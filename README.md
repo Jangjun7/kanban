@@ -67,31 +67,37 @@
 * 칸반 삭제 컨트롤러 처리
 * 기본 스타일 처리
 
-## 6일차
+## 6일차 
 * 기본 스타일 처리
+* 메인페이지 로그인 양식 
 * 회원가입 양식 구성하기
 * 회원가입 처리하기
-  - 모델 구성
+  - 모델 구성 
   - models/member/JoinService.java : 가입
-  - models/member/Users.java
-  - models/member/UserDao.java
-  - models/member/JoinValidator.java
+  - models/member/Users.java 
+  - models/member/UsersDao.java
+  - models/member/JoinValidator.java 
 
 ## 7일차
-* 회원가입 처리하기
+* 회원가입 처리하기 
 * 비밀번호 복잡성처리
 * 휴대폰 유효성 검사 처리
 * 로그인 구현하기
-    - 모델 구성
-    - models/member/LoginService.java
-    - models/member/LoginValidator.java
+  - 모델 구성 
+  - models/member/LoginService.java 
+  - models/member/LoginValidator.java
 * 로그아웃 구현하기
-* 아이디 저장하기 구현하기
 
 ## 8일차
-* 아이디 저장하기 구현하기
-* 페이지 회원 인가 구현하기
-* 작업 등록시 회원 정보 추가
+* 아이디 저장하기 구현하기 
+* 페이지 회원 인가 구현하기 
+* 작업 등록시 회원 정보 추가 
 * 작업 수정/삭제 본인 작업 내역만 처리 가능하게 통제
 * 작업 등록/수정시 이미지 에디터 추가
 * 작업 등록/수정시 파일 첨부 추가
+
+## 9일차
+* 작업 수정/삭제 본인 작업 내역만 처리 가능하게 통제
+* 작업 등록/수정시 이미지 에디터 추가
+* 작업 등록/수정시 파일 첨부 추가
+* 작업 목록
