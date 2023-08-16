@@ -6,7 +6,6 @@ import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import models.member.LoginService;
-import models.member.LoginValidator;
 import models.member.MemberServiceManager;
 
 import java.io.IOException;
@@ -22,14 +21,14 @@ public class LoginController implements Controller  {
     }
 
     public void post(HttpServletRequest req, HttpServletResponse resp) {
-        try {
+        try{
             LoginService loginService = MemberServiceManager.getInstance().loginService();
-            loginService.login(req);
+            loginService.login(req, resp);
 
-            // 로그인 성공
+            // 로그인 성공 -> 작업 목록 이동
             go(resp, req.getContextPath() + "/works", "parent");
 
-        } catch (Exception e){
+        } catch (Exception e) {
             alertError(resp, e);
         }
     }

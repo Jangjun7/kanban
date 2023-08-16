@@ -10,8 +10,8 @@
     <head>
         <meta charset="UTF-8">
         <title>${title}</title>
-        <link rel="stylesheet" type="text/css" href="${cssUrl}style.css" />
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+        <link rel="stylesheet" type="text/css" href="${cssUrl}style.css" />
         <c:if test="${addCss != null}">
         <c:forEach var="file" items="${addCss}">
             <link rel="stylesheet" type="text/css" href="${cssUrl}${file}.css" />

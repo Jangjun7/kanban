@@ -21,9 +21,9 @@ public class ViewController implements Controller {
 
         try {
             InfoService infoService = WorkServiceManager.getInstance().infoService();
-            long workNo = UrlUtils.getPatternData(req,"works/(\\d*)");
+            long workNo = UrlUtils.getPatternData(req, "works/(\\d*)");
             Work work = infoService.get(workNo);
-            if(work == null){
+            if (work == null) {
                 throw new WorkNotFoundException();
             }
 
@@ -31,7 +31,7 @@ public class ViewController implements Controller {
 
             ViewUtils.load(req, resp, "works", "view");
 
-        }catch (Exception e){
+        } catch (Exception e) {
             alertError(resp, e, -1);
         }
     }

@@ -4,23 +4,25 @@ public class MemberServiceManager {
 
     private static MemberServiceManager instance;
 
-    private MemberServiceManager(){}
+    private MemberServiceManager() {}
 
     public static MemberServiceManager getInstance() {
-        if(instance==null){
+        if (instance == null) {
             instance = new MemberServiceManager();
         }
 
         return instance;
     }
 
-    public UsersDao usersDao(){
+    public UsersDao usersDao() {
         return new UsersDao();
     }
-    public JoinValidator joinValidator(){
+
+    public JoinValidator joinValidator() {
         return new JoinValidator(usersDao());
     }
-    public JoinService joinService(){
+
+    public JoinService joinService() {
         return new JoinService(usersDao(), joinValidator());
     }
 
