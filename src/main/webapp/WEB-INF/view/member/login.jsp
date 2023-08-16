@@ -12,7 +12,7 @@
         <input type="password" name="userPw" placeholder="비밀번호">
 
         <div>
-            <input type="checkbox" name="saveId" value="true" id="saveId"${cookie.saveId == null ? "" : " checked"}>
+            <input type="checkbox" name="saveId" value="true" id="saveId"${cookie.saveId == null ? "":" checked"}>
             <label for="saveId">아이디 저장</label>
         </div>
         <div>

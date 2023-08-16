@@ -28,7 +28,7 @@ public class SaveController implements Controller {
                 if (work == null) {
                     throw new WorkNotFoundException();
                 }
-            } else { // 추가
+            } else { // 추가 
                 work = new Work();
             }
 
@@ -48,7 +48,7 @@ public class SaveController implements Controller {
         SaveService saveService = WorkServiceManager.getInstance().saveService();
         try {
             saveService.save(req);
-
+            
             // 추가, 수정 성공시 목록으로 이동
             go(resp, req.getContextPath() + "/works", "parent");
 

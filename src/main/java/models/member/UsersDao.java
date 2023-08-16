@@ -6,12 +6,12 @@ import org.apache.ibatis.session.SqlSession;
 import org.mindrot.jbcrypt.BCrypt;
 
 public class UsersDao {
-    public boolean register(UserForm userForm) {
+    public boolean register(UserForm users) {
         SqlSession sqlSession = DBConnection.getSession();
-        String hash = BCrypt.hashpw(userForm.getUserPw(), BCrypt.gensalt(12));
-        userForm.setUserPw(hash);
+        String hash = BCrypt.hashpw(users.getUserPw(), BCrypt.gensalt(12));
+        users.setUserPw(hash);
 
-        int affectedRows = sqlSession.insert("UserMapper.add", userForm);
+        int affectedRows = sqlSession.insert("UserMapper.add", users);
 
         sqlSession.commit();
 

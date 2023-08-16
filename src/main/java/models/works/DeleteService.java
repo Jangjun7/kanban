@@ -9,11 +9,11 @@ public class DeleteService {
 
     public void delete(long workNo) {
 
-        if(!workDao.exists(workNo)){
+        if (!workDao.exists(workNo)) {
             throw new WorkNotFoundException();
         }
 
-        if(!workDao.delete(workNo)){
+        if (!workDao.delete(workNo)) {
             throw new WorkDeleteException();
         }
     }

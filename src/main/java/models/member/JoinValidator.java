@@ -58,7 +58,7 @@ public class JoinValidator implements Validator<UserForm>, RequiredValidator, Pa
             throw new JoinValidationException("비밀번호가 일치하지 않습니다.");
         }
         // 5. 비밀번호 복잡성 체크
-        // checkTrue(passwordCheck(userPw,2), new JoinValidationException("비밀번호는 대소문자 각각1개 이상, 숫자 1개 이상, 특수문자를 포함해서 입력하세요."));
+       // checkTrue(passwordCheck(userPw,2), new JoinValidationException("비밀번호는 대소문자 각각1개 이상, 숫자 1개 이상, 특수문자를 포함해서 입력하세요."));
 
         // 6. 휴대폰번호 유효성 검사
         if (mobile != null && !mobile.isBlank()) {

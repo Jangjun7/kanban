@@ -18,11 +18,14 @@ public class JoinController implements Controller {
 
     public void post(HttpServletRequest req, HttpServletResponse resp) {
         JoinService joinService = MemberServiceManager.getInstance().joinService();
-        try{
+        System.out.println("여기?");
+        try {
             joinService.join(req);
+            
             // 회원가입 성공시 로그인 페이지로 이동
             go(resp, req.getContextPath() + "/", "parent");
-        }catch (Exception e){
+
+        } catch (Exception e) {
             alertError(resp, e);
         }
     }
